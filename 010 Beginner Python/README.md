@@ -107,7 +107,7 @@ print(8//3)   # round down, works like floor function
   > - the condition statement should return a `True` or `False`, this will give you a hint whether the condition statement is correct
   > - indentation is important in `if/else` statement, it marks what code block will be executed, and you will get an indentation error if you you are doing it wrong
 
-![flow chart 1](image.jpg)
+![flow chart 1](images/flowchart1.png)
 
 
 ```python
@@ -121,7 +121,7 @@ else:
 
 2. Nested if statement (mulitple layers of condition has to be met)
 
-![flow chart 2](image.jpg)
+![flow chart 2](images/flowchart2.png)
 
 ```python
 
@@ -138,7 +138,7 @@ else:
 
 3. `elif` statement  (choice or multiple options at the same level/layer)
 
-![flow chart 3](image.jpg)
+![flow chart 3](images/flowchart3.png)
 
 ```python
  if height>120:
@@ -156,7 +156,7 @@ else:
 4. multiple if statement (no matter what the previous condition; order of execution)
 
 
-![flow chart 4](image.jpg)
+![flow chart 4](images/flowchart4.png)
 
 ```python
   # indentation is very important, will change the order of execution
