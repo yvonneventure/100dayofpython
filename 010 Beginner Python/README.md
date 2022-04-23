@@ -303,5 +303,197 @@ while True :       # infinite loop
 ```
 
 
-### [Day 7 - Project : Hanging Man](Day 7 Project -  Hanging Man/main.py)
+### [Day 7 - Project : Hanging Man](https://github.com/yvonneventure/100dayofpython/tree/main/010%20Beginner%20Python/Day%207%20Project-%20Hanging%20Man)
 
+
+### Day 8 - Function Parameter
+
+1. Function with inputs
+
+```python
+   # here "a" is called "Parameter", 13 is called "Argument"  => pass argument to parameter
+def my_function(a):
+  a=13
+
+#   Functions with more than 1 input
+def sfun(a,b,c):
+# when we pass sfun(1,2,3), they will follow the default position, this is "Position Argument"
+sfun(1,2,3)
+   #a=1 b=2 c=3
+
+#in below case, it won't matter about the postion, this is "Keyword Argument"
+sfun(a=2,b=3,c=1)
+  #a=2,b=3,c=1
+ ```
+ 
+ 
+### Day 9 - Dictionary
+
+- Dictionary is a data structure that has "key" and "value"
+
+```python
+dict={}    # create empty dictionary
+programming_dictionary = {
+  "Bug": "An error in a program that prevents the program from running as expected.", 
+  "Function": "A piece of code that you can easily call over and over again.",
+}
+
+#retrieving item from the dictionary, has to use key, and be sure to spell correctly
+programming_dictionary["Bug"]
+
+#adding item to the dictionary
+programming_dictionary["Loop"]="a loop."
+print(programming_dictionary)
+
+#creat empty dictionary
+empty_dictionary={}
+
+#wipe out/clear the existing dictionary
+programming_dictionary={}
+
+#edit an item in dictionary
+programming_dictionary["Bug"]="a moth"
+
+#loop through a dictionary
+for key in programming_dictionary:
+  print(key) #get the key
+  print(programming_dictionary[key]) #get the value of the key
+```
+
+- Unlike List, dictionary doesn't have positions, so knowing the name of the "key" is very important
+- Dictionaries are used when order of elements are not important
+- Dictionary and list can be nested in each other
+
+
+
+
+### Day 10 - Function with output
+
+ ```python
+ def add_numbers(b,c):
+    a=b+c
+    return a
+ 
+ n=add_numbers(1,2)
+ print(n)          #n=3
+ ```
+ 
+- a simpler version can be 
+
+```python
+ def add_numbers(b,c):
+    return b+c
+ 
+ n=add_numbers(1,2)
+ print(n)          #n=3
+ ``` 
+- can also return `True` or `False` or a string
+
+```python
+ def print_string():
+    return "You are the best"
+ 
+ print(print_string())          #print out "You are the best"
+ 
+ def always_true ():
+   return True
+ 
+ is_game=always_true()      # is_game=True
+ 
+ ``` 
+
+
+### Day 11 - Capstone project : BlackJack
+
+
+
+
+### Day 12 - Scope: Global variable and Local variable
+
+```python
+##Local variable vs. Global variable
+enemies = 1
+#within function is local
+def increase_enemies():
+  enemies = 2
+  print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+#There's no block scope
+#ie. within if/loops are global variable
+
+#Best practice : use upper case for Global constants (variables don't change)
+PI=3.14159
+URL="xxxxxx"
+```
+
+### Day 13 - Debugging
+
+- ways to debug
+ - pay a attention to the error message
+ - create test cases to test results
+ - use `print()` often to verify your results
+
+```python
+
+# Describe Problem
+def my_function():
+  for i in range(1, 21):
+    if i == 20:
+      print("You got it")
+my_function()
+
+# Reproduce the Bug
+from random import randint
+dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
+dice_num = randint(1, 6)
+print(dice_imgs[dice_num-1])
+
+# Play Computer : make sure it's mutual exclusive
+year = int(input("What's your year of birth?"))
+if year > 1980 and year < 1994:
+  print("You are a millenial.")
+elif year >= 1994:
+  print("You are a Gen Z.")
+
+
+# Fix the Errors
+age = int(input("How old are you?"))
+if age > 18:
+  print(f"You can drive at age {age}.")
+
+#Print is Your Friend
+pages = 0
+word_per_page = 0
+pages = int(input("Number of pages: "))
+word_per_page = int(input("Number of words per page: "))
+total_words = pages * word_per_page
+print(total_words)
+
+#Use a Debugger
+def mutate(a_list):
+  b_list = []
+  for item in a_list:
+    new_item = item * 2
+    b_list.append(new_item)
+  print(b_list)
+
+mutate([1,2,3,5,8,13])
+```
+
+
+
+### Day 14 - Project : Higher Lower Game of Ins Followers
+
+
+
+
+
+
+
+
+
+
+ 
