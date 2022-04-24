@@ -2,12 +2,12 @@ import requests
 import datetime
 
 pixela_endpoint="https://pixe.la/v1/users"
-TOKEN= "dweresfdfydfuydrt"
-USER="kateangela"
+TOKEN= TOKEN
+USER=USER
 
 user_params ={
-    "token":"dweresfdfydfuydrt",
-    "username":"kateangela",
+    "token":TOKEN,
+    "username":USER,
     "agreeTermsOfService":"yes",
     "notMinor": "yes"
 }
@@ -32,9 +32,9 @@ headers={
 # response=requests.post(url=graph_endpoint,json=graph_config,headers=headers)
 # print(response.text)
 
-#### graph will be created here: https://pixe.la/v1/users/kateangela/graphs/graph1.html
+#### graph will be created here: https://pixe.la/v1/users/{USER}/graphs/graph1.html
 
-pix_endpoint = "https://pixe.la/v1/users/kateangela/graphs/graph1"
+pix_endpoint = f"https://pixe.la/v1/{USER}/kateangela/graphs/graph1"
 #today=datetime.datetime.today()
 today=datetime.datetime(year=2022,month=4,day=9)
 
@@ -51,7 +51,7 @@ pix_config={
 # print(response.text)
 
 ##-----Update a pixel
-update_endpoint=f"https://pixe.la/v1/users/kateangela/graphs/graph1/{today.strftime('%Y%m%d')}"
+update_endpoint=f"https://pixe.la/v1/users/{USER}/graphs/graph1/{today.strftime('%Y%m%d')}"
 update={
     "quantity":"2"
 }
