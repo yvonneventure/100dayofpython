@@ -1,9 +1,22 @@
 # Beginner Level Python Notes - Day 1 to Day 14
+<br>
 
 
 ### Day 1 - Print, String Manipulation, Input, Variable
 
+<br>
+
+> [Day 1 Project - Band Name Generator](Day%201%20Project%20-%20Band%20Name%20Generator)
+
+<br>
+
  1.1 `print( )` function, double quotes vs. single quotes
+  - ❗️Double quote "" and single quote '' can be used interchangable. but a set of double quote cannot work with double quote again, same with singer quotes.
+
+  - ❗️Don’t put spaces or tab before the code, you will get indentation error
+
+
+
 ```python
 print(“hello world!”)✅
 print(‘hello world!’)✅
@@ -36,8 +49,15 @@ print(‘print('hello world')’)❌
 * cannot use function name as  your variable name
 
 
+<br>
 
 ### Day 2 - Data Types, Number Operations
+
+<br>
+
+> [Day 2 Project - Tips Calculator](Day%202%20Project%20%2D%20Tips%20Calculator)
+
+<br>
 
 1. Data Types
   * `str` for string
@@ -95,8 +115,15 @@ print(8//3)   # round down, works like floor function
 {:0.2f} .format(9/2)  # if like 9/2=4.5, there's no way to round to 2 decimal place, then use this to format numbers
 
 ```
+<br>
 
 ### Day 3 - Control Flow, Logic Operator
+
+<br>
+
+> [Day 3 Project - Treasure Island](Day%203%20Project%20%2D%20Treasure%20Island)
+
+<br>
 
 1. Conditional statement if/else
 
@@ -189,10 +216,15 @@ else:
 
 ```
 
-
+<br>
 
 ### Day 4 - Randomisation, Python List
 
+<br>
+
+> [Day 4 Project - Rock Paper Scissors](Day%204%20Project-%20Rock%20Paper%20Scissors)
+
+<br>
 
 1.  Creat randomness using Randome Module
 
@@ -249,8 +281,15 @@ print(dirty_dozen[1][2]) # the index 2 of the index 1 list => the 3rd item in th
 ```
 
 
+<br>
 
 ### Day 5 - For Loops
+
+<br>
+
+> [Day 5 Project - Password Generator](Day%205%20Project-%20Password%20Generator)
+
+<br>
 
 
 1. For loops in a list
@@ -276,9 +315,15 @@ for i in range(1,5,2):
   print(i)
 ```
 
+<br>
 
 ### Day 6 - Functions, While loops
 
+<br>
+
+> [Day 6 Project - Reeborg World Tests](Day%206%20Project%20-%20Reeborg%20World%20Tests)
+
+<br>
 
 1. [Built-in Functions](https://docs.python.org/3/library/functions.html)
 
@@ -302,11 +347,20 @@ while True :       # infinite loop
   do this 
 ```
 
+<br>
 
-### [Day 7 - Project : Hanging Man](https://github.com/yvonneventure/100dayofpython/tree/main/010%20Beginner%20Python/Day%207%20Project-%20Hanging%20Man)
+### [Day 7 - Project : Hanging Man](Day%207%20Project-%20Hanging%20Man)
 
+<br>
+<br>
 
 ### Day 8 - Function Parameter
+
+<br>
+
+> [Day 8 Project - Caesar Cipher](Day%208%20Project%2D%20Caesar%20Cipher)
+
+<br>
 
 1. Function with inputs
 
@@ -325,9 +379,16 @@ sfun(1,2,3)
 sfun(a=2,b=3,c=1)
   #a=2,b=3,c=1
  ```
- 
+<br> 
  
 ### Day 9 - Dictionary
+
+<br>
+
+> [Day 9 Project - Blind Auction](Day%209%20Project-%20Blind%20Auction)
+
+
+<br>
 
 - Dictionary is a data structure that has "key" and "value"
 
@@ -366,8 +427,18 @@ for key in programming_dictionary:
 
 
 
+<br>
 
 ### Day 10 - Function with output
+
+<br>
+
+> [Day 10 Project - Basic Calculator](Day%2010%20Project%20-%20Basic%20Calculator)
+
+<br>
+
+- Function with output
+
 
  ```python
  def add_numbers(b,c):
@@ -402,14 +473,28 @@ for key in programming_dictionary:
  
  ``` 
 
+<br>
 
 ### Day 11 - Capstone project : BlackJack
 
-> [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+<br>
+
+>[Day 11 - Capstone project : BlackJack](Day%2011%20Project%20-%20Black%20Jack%20Game)
 
 
+
+
+<br>
 
 ### Day 12 - Scope: Global variable and Local variable
+
+<br>
+
+> [Day 12 Project - Number Guessing](Day%2012%20Project%20-%20Number%20Guessing)
+
+<br>
+
+- Local variable vs. Global variable
 
 ```python
 ##Local variable vs. Global variable
@@ -429,8 +514,11 @@ print(f"enemies outside function: {enemies}")
 PI=3.14159
 URL="xxxxxx"
 ```
+<br>
 
 ### Day 13 - Debugging
+
+<br>
 
 - ways to debug
  - pay a attention to the error message
@@ -485,13 +573,27 @@ mutate([1,2,3,5,8,13])
 ```
 
 
+<br>
 
 ### Day 14 - Project : Higher Lower Game of Ins Followers
 
+<br>
+
+>[Day 14 - Project : Higher Lower Game of Ins Followers](Day%2014%20Project%20-%20Ins%20Follower%20Higher%20Lower%20Game)
 
 
+<br>
 
+<hr>
+<br>
 
+## Related Resources
+
+<br>
+
+-  [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+-  [ASCII Art](https://ascii.co.uk/art)
+-  [Create Flow Chart Online](https://app.diagrams.net)
 
 
 
