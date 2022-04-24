@@ -10,8 +10,8 @@ day=now.day
 content = ""
 name=""
 to_email=""
-my_email="pythonday1031@gmail.com"
-my_pw="qazwsx@1234"
+my_email=EMAIL
+my_pw=PASSWORD
 def send_email():
     with smtplib.SMTP("smtp.gmail.com") as connection:
         #make connection secure
