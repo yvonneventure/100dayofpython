@@ -4,11 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
-s =Service('/Users/Zihan/Development/chromedriver')
+s =Service(DRIVER_LOCAL_LOCATION)
 driver = webdriver.Chrome(service=s)
-# url='https://www.google.com'
-# chrome_driver_path = "/Users/Zihan/Development/chromedriver"
-#driver = webdriver.Chrome(executable_path=chrome_driver_path)
 
 
 driver.get("http://orteil.dashnet.org/experiments/cookie/")
