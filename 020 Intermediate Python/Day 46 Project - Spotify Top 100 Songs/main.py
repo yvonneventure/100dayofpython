@@ -17,8 +17,8 @@ for title in titles:
 title_list=title_list[3:102:1]
 #print(title_list)
 
-id = "272a4212110641779a858e8a4c8fb77b"
-secret = "5ef790b9029244e6b3dbf7aa29ff0276"
+id = id
+secret = secret
 
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
