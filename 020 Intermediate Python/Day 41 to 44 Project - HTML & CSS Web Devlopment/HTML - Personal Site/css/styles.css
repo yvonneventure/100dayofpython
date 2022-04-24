@@ -1,0 +1,32 @@
+/**********Tag selectors *******/
+body {
+  background-color: #EAF6F6;
+}
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: grey;
+  border-width: 5px;
+  width:5%;
+}
+h1 {
+  color: #66BFBF;
+}
+h3 {
+  color: #66BFBF;
+}
+
+/***** Class Selectors *******/
+/* used for defining a class/group to have the same style
+/* each element can have more than 1 class by adding class="xxx  yyy" in html
+/* in css*/
+.xxx {
+  background-color: red;
+}
+
+/***** ID Selectors *******/
+/* rarely used, each element can only have 1 ID and that ID is unique
+/* can be achieved by adding id="zzz" in html*/
+#zzz {
+  background-color: red;
+}
