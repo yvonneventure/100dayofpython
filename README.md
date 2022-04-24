@@ -1,12 +1,20 @@
 # 100 Day of Code - Python
 
+<br>
+
 Syllabus for **100 Days of Code** by *Angela Yu* at Udemy.
-> - Notes will be in the individual folder.
+
+<br>
+
+> Progress Tracker:
 > - Current Progress is 48 / 100.
 > - Start Date : March 16th, 2022.
 
+<br>
 
-## Beginner Level (Day 1 - Day 14)
+## [Beginner Level (Day 1 - Day 14)](010%20Beginner%20Python)
+
+<br>
 
  - Variables in Python
  - String Manipulation
@@ -33,7 +41,11 @@ Syllabus for **100 Days of Code** by *Angela Yu* at Udemy.
  - Scope and Local/Global Variables
  - Debugging Techniques
 
-## Intermediate Level (Day 15 - Day 57)
+<br>
+
+## [Intermediate Level (Day 15 - Day 57)](020%20Intermediate%20Python)
+
+<br>
 
 - Local Development Environment Setup
 - PyCharm Tips and Tricks
@@ -86,9 +98,11 @@ Syllabus for **100 Days of Code** by *Angela Yu* at Udemy.
 - Templating with Jinja 2
 - WTForms
 
+<br>
 
 ## Advanced Level (Day 58 - Day 80)
 
+<br>
 
 - Web Development with Bootstrap
 - Build Your Own REST API with Python
