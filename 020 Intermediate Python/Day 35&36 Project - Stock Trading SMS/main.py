@@ -9,8 +9,8 @@ from twilio.rest import Client
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
-account_sid = 'AC6761d771f927f7cedd19c74f38fc9ec8'
-auth_token = 'b90dfb1eb19d9e11754de8b507393dde'
+account_sid = SID
+auth_token = TOKEN
 client = Client(account_sid, auth_token)
 
 def get_news():
@@ -24,7 +24,7 @@ def get_news():
 
 ## STEP 1: Use https://www.alphavantage.co
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
-alpha_key = "F94YAJI91B638ZI3"
+alpha_key = KEY
 response=requests.get(url=f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={STOCK}&apikey={alpha_key}")
 response.raise_for_status()
 stock_dataset=response.json()
@@ -43,7 +43,7 @@ if (t1_data-t2_data)/t2_data>0.01:
     content=get_news()
     nes=html.unescape(f"TSLA: 🔺{percentage} {content}")
 
-    message = client.messages.create(body=nes,from_='+16204989396',to='+16478839992')
+    message = client.messages.create(body=nes,from_=PHONE,to=MYPHONE)
 
    # print(message.status)
 
@@ -53,7 +53,7 @@ elif (t1_data-t2_data)/t2_data<-0.01:
     content = get_news()
     nes = html.unescape(f"TSLA: 🔻{percentage} {content}")
 
-    message = client.messages.create(body=nes, from_='+16204989396', to='+16478839992')
+    message = client.messages.create(body=nes, from_=PHONE,to=MYPHONE))
 
 ## STEP 2: Use https://newsapi.org
 # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME.
