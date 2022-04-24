@@ -40,13 +40,13 @@ print(‘print('hello world')’)❌
 
  1.4 `#` for comment in python
 
- 1.5 variable naming rules:
+ 1.5 Variable naming rules:
 
-* use underscore`_` in variable name
+* Use underscore`_` in variable name
 
-* can use number at the end of the variable name
+* Can use number at the end of the variable name
 
-* cannot use function name as  your variable name
+* Cannot use function name as  your variable name
 
 
 <br>
@@ -102,7 +102,7 @@ print(‘print('hello world')’)❌
    - instead of use `a=a+2` we can use `a+=2`
    - same for `*=` `-=` `\=`
 
-4. f-string
+4. F-string
   - f-string allows you to not change data type and output like normal string
   - usually used with variable, and variable use `{}`
   - `print(f”My score is {score}")`
@@ -127,12 +127,12 @@ print(8//3)   # round down, works like floor function
 
 1. Conditional statement if/else
 
-- comparison operator
+- Comparison operator
  - `=` is assign what's on the right to the left
  - `==` is check equality of what on the right with what’s on the right
  - `!=` is not equal to 
-  > - the condition statement should return a `True` or `False`, this will give you a hint whether the condition statement is correct
-  > - indentation is important in `if/else` statement, it marks what code block will be executed, and you will get an indentation error if you you are doing it wrong
+  > - The condition statement should return a `True` or `False`, this will give you a hint whether the condition statement is correct
+  > - Indentation is important in `if/else` statement, it marks what code block will be executed, and you will get an indentation error if you you are doing it wrong
 
 ![flow chart 1](images/flowchart1.png)
 
@@ -180,7 +180,7 @@ else:
 
 ```
 
-4. multiple if statement (no matter what the previous condition; order of execution)
+4. Multiple if statement (no matter what the previous condition; order of execution)
 
 
 ![flow chart 4](images/flowchart4.png)
@@ -205,7 +205,7 @@ else:
 
 
 
-5. logic operator `and`, `or`, `not`
+5. Logic operator:  `and`, `or`, `not`
 
 ```python
 
@@ -349,9 +349,13 @@ while True :       # infinite loop
 
 <br>
 
-### [Day 7 - Project : Hanging Man](Day%207%20Project-%20Hanging%20Man)
+### Day 7 - Project : Hanging Man
 
 <br>
+
+> [Day 7 - Project : Hanging Man](Day%207%20Project-%20Hanging%20Man)
+
+
 <br>
 
 ### Day 8 - Function Parameter
@@ -449,7 +453,7 @@ for key in programming_dictionary:
  print(n)          #n=3
  ```
  
-- a simpler version can be 
+- Simpler version can be 
 
 ```python
  def add_numbers(b,c):
@@ -458,7 +462,7 @@ for key in programming_dictionary:
  n=add_numbers(1,2)
  print(n)          #n=3
  ``` 
-- can also return `True` or `False` or a string
+- Can also return `True` or `False` or a string
 
 ```python
  def print_string():
@@ -499,6 +503,7 @@ for key in programming_dictionary:
 ```python
 ##Local variable vs. Global variable
 enemies = 1
+
 #within function is local
 def increase_enemies():
   enemies = 2
@@ -520,53 +525,71 @@ URL="xxxxxx"
 
 <br>
 
-- ways to debug
- - pay a attention to the error message
- - create test cases to test results
- - use `print()` often to verify your results
+- Ways to debug
+  - Describe the problem
+    - What's the for loop doing?
+    - What's the if statement doing
+    - What's the function is doing?
+    - What are your assumptions?
+  - Reproduce the error to see when exactly the error happens
+  - Play Computer : make sure conditions are mutually exclusive
+  - Pay attention to the error message
+  - Create test cases to test every case
+  - Use `print()` function often to verify your results
+  - Use [Python Tutor](https://pythontutor.com/visualize.html#mode=edit) to debug
+ 
 
 ```python
+## Please debug the below:
 
 # Describe Problem
+
 def my_function():
-  for i in range(1, 21):
+  for i in range(1, 20):    # correct should be: for i in range(1, 21):
     if i == 20:
       print("You got it")
 my_function()
 
 # Reproduce the Bug
+
 from random import randint
 dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
-dice_num = randint(1, 6)
-print(dice_imgs[dice_num-1])
+dice_num = randint(1, 6)      # correct should be : dice_num = randint(1, 5) 
+print(dice_imgs[dice_num])
 
-# Play Computer : make sure it's mutual exclusive
+# Play the Computer 
+
 year = int(input("What's your year of birth?"))
 if year > 1980 and year < 1994:
   print("You are a millenial.")
-elif year >= 1994:
+elif year > 1994:               # correct should be:   elif year >= 1994:
   print("You are a Gen Z.")
 
 
 # Fix the Errors
-age = int(input("How old are you?"))
+
+age = input("How old are you?")      # correct should be :age = int(nput("How old are you?"))
 if age > 18:
   print(f"You can drive at age {age}.")
 
 #Print is Your Friend
+
 pages = 0
 word_per_page = 0
 pages = int(input("Number of pages: "))
-word_per_page = int(input("Number of words per page: "))
+word_per_page == int(input("Number of words per page: "))  # correct should be word_per_page = int(input("Number of words per page: "))
+#print(word_per_page)
+#print(pages)
 total_words = pages * word_per_page
 print(total_words)
 
 #Use a Debugger
+
 def mutate(a_list):
   b_list = []
   for item in a_list:
     new_item = item * 2
-    b_list.append(new_item)
+  b_list.append(new_item)    # this line should be within for loop block, ie. indented
   print(b_list)
 
 mutate([1,2,3,5,8,13])
@@ -584,7 +607,7 @@ mutate([1,2,3,5,8,13])
 
 <br>
 
-<hr>
+
 <br>
 
 ## Related Resources
@@ -594,6 +617,7 @@ mutate([1,2,3,5,8,13])
 -  [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
 -  [ASCII Art](https://ascii.co.uk/art)
 -  [Create Flow Chart Online](https://app.diagrams.net)
+-  [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
 
 
 
