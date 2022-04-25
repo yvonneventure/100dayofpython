@@ -83,7 +83,7 @@
 
 <br>
 
-### Web Development - HTML & CSS
+### Front-end Web Development - HTML & CSS
 
 <br>
 
@@ -114,7 +114,7 @@
 
 <br>
 
-### Web Development - Flask
+### Back-end Web Development - Flask in Python
 
 <br>
 
@@ -125,7 +125,25 @@
 
 <br>
 
+- Front-end languages : HTML, CSS, Javascript
 
+- Back-end languages : Javascript, Python, Java, etc.
+
+- Full-stack = Front-end + Back-end
+
+- Frameworks: tools come with code pre-built for common used functions. 
+  - Front-end: React, Angular, etc
+  - Back-end: Node, Flask, etc
+
+> Flask vs. Django
+
+> - Flask is more for beginners and small projects
+> - Django is more for larger commercial projects
+
+
+[Framework vs. Library]()
+
+The biggest difference is that we have to obey the rules of framework, so that framework can call our methods (rather than we call methods from library).
 
 
 
