@@ -135,7 +135,7 @@
   - Front-end: React, Angular, etc
   - Back-end: Node, Flask, etc
 
-> Flask vs. Django
+> [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/) vs. Django
 
 > - Flask is more for beginners and small projects
 > - Django is more for larger commercial projects
