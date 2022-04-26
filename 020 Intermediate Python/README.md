@@ -350,3 +350,15 @@ create_blog_post(new_user)
 
 
 
+
+
+## Related Reources
+
+<br>
+
+- [Find GIF](https://giphy.com)
+
+
+
+
+
