@@ -284,7 +284,7 @@ def hello_world():
 
 # we can do something similar
 @app.route('/bye')
-def hello_world():
+def bye():
     return 'Goodbye!'
 
 ## now when we go to 'homepage/bye' we will see "Goodbye" rendered.
