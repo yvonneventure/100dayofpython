@@ -299,6 +299,12 @@ if __name__ == '__main__':
 
 <br>
 
+#### Advanced Python Decorator with variables and arguments
+
+- [Flask Rules of variables](https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules)
+
+<br>
+
 ```python
 ## Advanced Python Decorator Functions
 
