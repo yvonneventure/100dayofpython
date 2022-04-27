@@ -328,6 +328,39 @@ new_user.is_logged_in = True
 create_blog_post(new_user)
 ```
 
+<br>
+
+- [Render HTML files under Flask Framework](https://flask.palletsprojects.com/en/1.1.x/quickstart/#rendering-templates)
+  - Put html files under 'templates' folder
+
+```python
+
+from flask import Flask, render_template
+
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+```
+
+<br>
+
+- Render Static files (imgs, css files, etc)
+  - 1. Put them under 'static' folder
+  - 2. update the path in html file
+
+
+<br>
+
+> ❗️ Use google developer tool, in console, type in `document.body.contentEditable=true` and run, this will allow you to make changes to the website on the spot(none of the changes are saved and will be lost on refresh). And once you are done, save it as html file and render it then you can have a copy.
 
 
 
@@ -362,7 +395,9 @@ create_blog_post(new_user)
 
 <br>
 
-- [Find GIF](https://giphy.com)
+- [Find GIF on giphy.com](https://giphy.com)
+- [HD wallpaper on Uplash.com](https://unsplash.com)
+- [Free html templates (not for commercial use)](https://html5up.net)
 
 
 
