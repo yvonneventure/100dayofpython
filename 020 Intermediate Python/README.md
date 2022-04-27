@@ -138,7 +138,6 @@
   - Back-end: Node, Flask, etc
 
 > [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/) vs. Django
-
 > - Flask is more for beginners and small projects
 > - Django is more for larger commercial projects
 
@@ -267,6 +266,10 @@ decorated_function()
 
 <br>
 
+#### Basic Flask App
+
+<br>
+
 ```python
 
 ###Basic Flask App
@@ -329,6 +332,8 @@ create_blog_post(new_user)
 ```
 
 <br>
+
+
 
 - [Render HTML files under Flask Framework](https://flask.palletsprojects.com/en/1.1.x/quickstart/#rendering-templates)
   - Put html files under 'templates' folder
