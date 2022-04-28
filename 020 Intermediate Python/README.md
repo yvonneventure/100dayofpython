@@ -10,24 +10,38 @@
 
 <br>
 
-### Object Oriented Programming 
+- [PEP 8 – Style Guide for Python Code:](https://peps.python.org/pep-0008/) 
+  - promotes consistency and clarity, and help other developers better understand your code
+
+
+
+### Object Oriented Programming (OOP) & Graphic User Interface (GUI) - [Turtle](https://docs.python.org/3/library/turtle.html)
 
 <br>
 
- > - [Day 16 Project - Coffee Machine OOP](Day%2016%20Project%20-%20Coffee%20Machine%20OOP)
- > - [Day 17 Project - Quiz Game](Day%2017%20Project%20-%20The%20Quiz%20Game)
-
-<br>
-
-### Graphic User Interface (GUI) - Turtle
-
-<br>
-
+> - [Day 16 Project - Coffee Machine OOP](Day%2016%20Project%20-%20Coffee%20Machine%20OOP)
+> - [Day 17 Project - Quiz Game](Day%2017%20Project%20-%20The%20Quiz%20Game)
 > - [Day 18 Project - Dots Artwork Mirror Damien Hirst](Day%2018%20Project-%20Dots%20Artwork%20Mirror%20Damien%20Hirst)
 > - [Day 19 Project - Turtle Race Game](Day%2019%20Project%20-%20Turtle%20Race)
 > - [Day 20 & 21 Project - Pong Game](Day%2020%2621%20Project%20-%20Snake%20Game)
 > - [Day 22 Project - Snake Game](Day%2022%20Project%20-%20Pong%20Game)
 > - [Day 23 Project - Turtle Crossing Game](Day%2023%20Project%20-%20Turtle%20Crossing%20Game)
+
+<br>
+
+- Why use Object Oriented Programming?
+  - So far what we've done are just **procedural programing**, where program runs from top to bottom and jump to function whenever called. 
+  - OOP breaks down the problems and each person works on the individual object.
+
+- What is OOP?
+
+
+
+- How to use OOP?
+  - **Class**: A blueprint, can contain multiple objects that has same function
+  - **Attributes**: Variables in object
+  - **Methods**: Functions in object
+ 
 
 <br>
 
@@ -400,6 +414,8 @@ if __name__ == '__main__':
 
 <br>
 
+- [-PyCharm Keyboard Shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html)
+- [Pypi: Repository of Python Packages](https://pypi.org/)
 - [Find GIF on giphy.com](https://giphy.com)
 - [HD wallpaper on Uplash.com](https://unsplash.com)
 - [Free html templates (not for commercial use)](https://html5up.net)
