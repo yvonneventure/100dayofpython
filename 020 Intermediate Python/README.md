@@ -19,8 +19,8 @@
 
 <br>
 
-> - [Day 16 Project - Coffee Machine OOP](Day%2016%20Project%20-%20Coffee%20Machine%20OOP)
-> - [Day 17 Project - Quiz Game](Day%2017%20Project%20-%20The%20Quiz%20Game)
+> - [Day 16 Project - Coffee Machine OOP](Day%2016%20Project%20-%20Coffee%20Machine%20OOP): Modify Day 15 Project code to use OOP, instead of Procedual Programming
+> - [Day 17 Project - Quiz Game](Day%2017%20Project%20-%20The%20Quiz%20Game) : Build own class
 > - [Day 18 Project - Dots Artwork Mirror Damien Hirst](Day%2018%20Project-%20Dots%20Artwork%20Mirror%20Damien%20Hirst)
 > - [Day 19 Project - Turtle Race Game](Day%2019%20Project%20-%20Turtle%20Race)
 > - [Day 20 & 21 Project - Pong Game](Day%2020%2621%20Project%20-%20Snake%20Game)
@@ -29,21 +29,189 @@
 
 <br>
 
-- Why use Object Oriented Programming?
-  - So far what we've done are just **procedural programing**, where program runs from top to bottom and jump to function whenever called. 
-  - OOP breaks down the problems and each person works on the individual object.
-
-- What is OOP?
+#### Object Oriented Programming
 
 
+- Why use **Object Oriented Programming**?
 
-- How to use OOP?
-  - **Class**: A blueprint, can contain multiple objects that has same function
-  - **Attributes**: Variables in object
-  - **Methods**: Functions in object
- 
+  - So far what we've done are just **procedural programing**, where program runs from top to bottom and jump to function whenever called. When relationships get complex, it's hard to manage and remember them.
+
+
+  - OOP breaks down the problems and each person/team works on the individual object and can work simutaniously to promote productivity.
+
+  - Also, these objects are often reuseble for another future project.
+
+  - eg. A project of creating an automated car can be broken into navigation, camera, lane direction, .etc modules and each team can work on individual module/object at the same time. In the future, when we want to build a drone, some of the modules can be reused too.
 
 <br>
+
+- How to use OOP?
+
+  - **Class**: A blueprint, multiple objects can be generated from the class that have same function
+
+  - **Attributes**: Variables in object - what object has 
+
+  - **Methods**: Functions in object  - what object can do
+
+  - eg. Waiter is a class, then objects can be Henry the waiter and James the waiter, the attribute can be `can_hold_plates=True`, the method can be  `def take_orders():`
+ 
+<br>
+
+- Create an object from class `car= CarBluePrint()`, Class name has to be pascal case 
+
+> pascal case: MyFirstScript
+> camel case: myFirstScript
+> snake case: my_first_script
+
+```python
+
+#import class Turtle and Screen from module turtle
+#Turtle is a class and it has first letter capitalized
+from turtle import Turtle, Screen
+
+#ben is the name of the object, created/constructed from Turtle class (class is a blueprint)
+ben = Turtle()
+print(ben)
+ben.shape("turtle")
+ben.fillcolor("chartreuse4")
+ben.fd(100)
+
+myscreen = Screen()
+#calling object's attribute/variable : without '()'
+print(myscreen.canvheight)
+#calling object's methods/fuctions: with '()'
+myscreen.exitonclick()
+
+```
+
+> [turtle package documentation](https://docs.python.org/3/library/turtle.html)
+
+
+- Create Own Class in Python
+  - Create own attributes/variables in class
+  - Create methods/functions in class
+  
+  
+```python
+###### Class and Constructor ######
+
+# create a class called User, the name of the class should be pascal case
+class User:
+    #initialize or constructor : everytime the object of the class calls, this def block will be executed
+    #can be used to set up the default value, or default attributes that object will use repeatly
+    def __init__(self, id, name):  #(self) here means the object name when object= Class()
+        self.id = id
+        self.name = name      #name and id variable must be passed when object calls a class
+        self.follower = 0    #default value of follower attribute/variable
+        self.following = 0
+    def follow(self,user):     #similar to create function like other place, but always have self as a parameter
+        self.following += 1
+        user.follower += 1
+
+# let's say a instagram case where has user name, id and can follow other people
+user1 = User(1,"kate")
+user2 = User(2,"UG")
+user1.follow(user2)           #user1 follow user2
+print(user1.follower)
+print(user1.following)
+print(user2.follower)
+print(user2.following)
+```
+
+<br>
+
+
+#### GUI - Turtle
+
+- Turtle challenge 1 : draw shapes with random color
+
+
+```python
+#draw shapes with random color
+from turtle import Turtle, Screen
+import random
+
+turtle = Turtle()
+screen = Screen()
+
+screen.colormode(255)
+
+for i in range(3, 11):
+    r = random.randint(0, 256)
+    g = random.randint(0, 256)
+    b = random.randint(0, 256)
+    turtle.pencolor(r,g,b)
+    for n in range(i):
+        turtle.fd(100)
+        turtle.right(360/i)
+
+
+screen.exitonclick()
+```
+- Turtle challenge 2 : draw random walk
+
+```python
+#draw random walk
+from turtle import Turtle, Screen
+import random
+
+turtle = Turtle()
+screen = Screen()
+
+screen.colormode(255)
+angles = [0, 90, 180, 270]
+
+for i in range(50):
+    screen.colormode(255)
+    r = random.randint(0, 256)
+    g = random.randint(0, 256)
+    b = random.randint(0, 256)
+    turtle.pencolor(r,g,b)
+    turtle.pensize(15)
+    turtle.setheading(random.choice(angles))
+    turtle.fd(30)
+
+screen.exitonclick()
+```
+
+- Turtle challenge 3 : draw Spirograph
+
+```python
+#draw Spirograph
+from turtle import Turtle, Screen
+import random
+
+turtle = Turtle()
+screen = Screen()
+
+screen.colormode(255)
+
+turtle.speed(0)
+def randcolor():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r,g,b)
+
+def circle(angle):
+    for i in range(int(360/angle)):
+        turtle.pencolor(randcolor())
+        turtle.circle(100)
+        turtle.setheading(turtle.heading()+angle)
+
+
+circle(5)
+screen.exitonclick()
+```
+
+<br>
+
+- Python Tuple (eg.`(1,2,8)`)
+    - Tuple is like a list, and has order, but cannot change the value inside or make any changes
+
+
+<br>
+
 
 ### Local Files, Directories, Paths
 
@@ -414,8 +582,9 @@ if __name__ == '__main__':
 
 <br>
 
-- [-PyCharm Keyboard Shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html)
+- [PyCharm Keyboard Shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html)
 - [Pypi: Repository of Python Packages](https://pypi.org/)
+- [clogram.py:](https://pypi.org/project/colorgram.py/#description) a python module to extract colors from image
 - [Find GIF on giphy.com](https://giphy.com)
 - [HD wallpaper on Uplash.com](https://unsplash.com)
 - [Free html templates (not for commercial use)](https://html5up.net)
