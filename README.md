@@ -7,8 +7,8 @@ Syllabus for **100 Days of Code** by *Angela Yu* at Udemy.
 <br>
 
 > Progress Tracker:
-> - Current Progress: 48 / 100
-> - Current Level: Intermediate 
+> - Current Progress: 57 / 100
+> - Current Level: Advanced
 > - Start Date : March 16th, 2022
 
 <br>
