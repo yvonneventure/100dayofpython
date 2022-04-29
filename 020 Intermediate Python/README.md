@@ -21,11 +21,11 @@
 
 > - [Day 16 Project - Coffee Machine OOP](Day%2016%20Project%20-%20Coffee%20Machine%20OOP): Modify Day 15 Project code to use OOP, instead of Procedual Programming
 > - [Day 17 Project - Quiz Game](Day%2017%20Project%20-%20The%20Quiz%20Game) : Build own class
-> - [Day 18 Project - Dots Artwork Mirror Damien Hirst](Day%2018%20Project-%20Dots%20Artwork%20Mirror%20Damien%20Hirst)
-> - [Day 19 Project - Turtle Race Game](Day%2019%20Project%20-%20Turtle%20Race)
-> - [Day 20 & 21 Project - Pong Game](Day%2020%2621%20Project%20-%20Snake%20Game)
-> - [Day 22 Project - Snake Game](Day%2022%20Project%20-%20Pong%20Game)
-> - [Day 23 Project - Turtle Crossing Game](Day%2023%20Project%20-%20Turtle%20Crossing%20Game)
+> - [Day 18 Project - Dots Artwork Mirror Damien Hirst](Day%2018%20Project-%20Dots%20Artwork%20Mirror%20Damien%20Hirst) 
+> - [Day 19 Project - Turtle Race Game](Day%2019%20Project%20-%20Turtle%20Race) : Create multiple objects from class
+> - [Day 20 & 21 Project - Snake Game](Day%2020%2621%20Project%20-%20Snake%20Game) : Class Inheritance
+> - [Day 22 Project - Pong Game](Day%2022%20Project%20-%20Pong%20Game)
+> - [Day 23 Capstone Project - Turtle Crossing Game](Day%2023%20Project%20-%20Turtle%20Crossing%20Game)
 
 <br>
 
@@ -59,9 +59,11 @@
 
 - Create an object from class `car= CarBluePrint()`, Class name has to be pascal case 
 
-> pascal case: MyFirstScript
-> camel case: myFirstScript
-> snake case: my_first_script
+> - pascal case: MyFirstScript
+> - camel case: myFirstScript
+> - snake case: my_first_script
+
+<br>
 
 ```python
 
@@ -206,11 +208,113 @@ screen.exitonclick()
 
 <br>
 
-- Python Tuple (eg.`(1,2,8)`)
+- Python **Tuple** (eg.`(1,2,8)`)
     - Tuple is like a list, and has order, but cannot change the value inside or make any changes
 
 
 <br>
+
+- Event Listener: listen to user's key press or mouse click
+
+
+```python
+####event listener : listen to user's key press or mouse click
+from turtle import Turtle, Screen
+t=Turtle()
+screen = Screen()
+
+def moveforward():
+  t.forward(10)
+## first listen, then specify the function and action
+screen.listen()
+screen.onkey(key="space",func="moveforward")
+##calling function as a parameter doesn't need '()'
+
+```
+
+<br>
+
+- Create multiple objects from same class
+
+```python
+###Turtle race : multiple instances/objects from same Class - create multiple turtles from Turtle class and control different turtles
+from turtle import Turtle, Screen
+import random
+
+screen = Screen()
+screen.setup(width=500,height=400)
+ubet = screen.textinput(title="Make a Bet", prompt="Which turtle will win? Enter a color: ")
+race = False
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+name = ["a","b","c","d","e","f"]
+
+basey = -180
+for i in range(6):
+    name[i] = Turtle(shape="turtle")
+    name[i].color(colors[i])
+    name[i].penup()
+    basey+=50
+    name[i].goto(x=-230, y=basey)
+
+if ubet:
+    race = True
+while race:
+    for turtle in name:
+        if turtle.xcor() > 230:
+            race = False
+            if turtle.pencolor()==ubet:
+                print(f"You win! The winning turtle is in color {turtle.pencolor()}")
+            else:
+                print(f"You lose! The winning turtle is in color {turtle.pencolor()}")
+        turtle.fd(random.randint(0,10))
+
+
+screen.exitonclick()
+```
+
+<br>
+
+- Class Inheritance
+
+```python
+import random
+from turtle import Turtle
+
+
+class Food(Turtle):
+
+    def __init__(self):
+        super().__init__()    ## inherit all methods and attributes from parent class Turtle
+        self.shape("circle")
+        self.penup()
+        self.shapesize(0.5,0.5)
+        self.color("blue")
+        self.speed(0)
+        self.refresh()
+
+    def refresh(self):
+        randomx = random.randint(-280, 280)
+        randomy = random.randint(-280, 280)
+        self.goto(randomx, randomy)
+```
+
+<br>
+
+- List & Tuple slicing
+
+```python
+piano_keys = ["a", "b", "c", "d", "e", "f", "g"]
+piano_tuple = ("do", "re", "mi", "fa", "so", "la", "ti")
+print(piano_keys[1:])
+print(piano_keys[:5])
+print(piano_keys[1:5:2])   #every other element
+print(piano_keys[::-1])    #print from right to left, reverse the order
+
+print(piano_tuple[:5])
+print(piano_tuple[1:])
+print(piano_tuple[1:5:2])
+```
+
 
 
 ### Local Files, Directories, Paths
