@@ -746,11 +746,16 @@ date_of_birth = dt.datetime(year=1993,month=10,day=31)
 > - [Day 35 & 36 Project - Stock Trading News SMS](Day%2035%2636%20Project%20-%20Stock%20Trading%20SMS)
 > - [Day 37 Project - Habit Tracker Use Pixela](Day%2037%20Project%20-%20Habit%20Tracker)
 > - [Day 38 Project - Workout Tracker Use Google Sheet](Day%2038%20Project%20-%20Workout%20Tracker%20Use%20Google%20Sheet)
-> - [Day 39&40 Project - Flight Deal Finder](Day%2039%2640%20Project%20-%20Flight%20Deal%20Finder)
+> - [Day 39&40 Capstone Project - Flight Deal Finder](Day%2039%2640%20Project%20-%20Flight%20Deal%20Finder)
+
+<br>
+#### **API **
+
+<br>
+- What's **API**?
 
 <br>
 
-- What's API?
   - just like teller between you and the bank vault, API is the teller, data is in vault and we need to tell teller, and teller may ask questions to verify us, also general information may don't need verification
   - API usually is an url, and website usually has an API documentation
   - to access website data/other system data, we need to make **requests**
@@ -783,10 +788,23 @@ print(data)
  
  <br>
  
- > JSON data is like a dictionary. Use this [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
- > Sometimes data will return html entities, to decode them first `import html` then `html.unescape('xxx'))`
- > A collective [list of APIs](https://apilist.fun/) to have fun
+ > - JSON data is like a dictionary. Use this [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
+ > - Sometimes data will return html entities, to decode them first `import html` then `html.unescape('xxx')`
+ > - A collective [list of APIs](https://apilist.fun/) to have fun
 
+
+<br>
+
+- API Authentication, Keys, Headers
+
+
+
+- Post requests, Put requests, Delete requests
+
+
+<br>
+
+#### Environment Variable
 
 <br>
 
