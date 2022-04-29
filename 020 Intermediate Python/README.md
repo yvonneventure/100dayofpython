@@ -703,6 +703,39 @@ raise TypeError("I made up this")    # break the program with this error messa
 <br>
 
 
+```python
+import smtplib
+def send_email():
+    with smtplib.SMTP("smtp.gmail.com") as connection:
+        #make connection secure
+        connection.starttls()
+        connection.login(user=my_email,password=my_pw)
+        connection.sendmail(from_addr=my_email,
+                            to_addrs=to_email,
+                        msg=f"Subject: Happy Birthday!\n\n {content}")
+```
+
+<br>
+
+- Python **Datetime** Module
+
+```python
+#date time module in python
+import datetime as dt
+
+now=dt.datetime.now()
+year= now.year()
+month=now.month()
+day_of_week = now.weekday()
+
+print(now)
+
+#create datetime object for birthdays
+date_of_birth = dt.datetime(year=1993,month=10,day=31)
+```
+
+<br>
+
 ### Application Programming Interface (API) - Requests Library
 
 
@@ -717,11 +750,53 @@ raise TypeError("I made up this")    # break the program with this error messa
 
 <br>
 
+- What's API?
+  - just like teller between you and the bank vault, API is the teller, data is in vault and we need to tell teller, and teller may ask questions to verify us, also general information may don't need verification
+  - API usually is an url, and website usually has an API documentation
+  - to access website data/other system data, we need to make **requests**
+  - **requests** are like rules or diff level of securities, not everyone can access the data
+  - **API Endpoint** is where all the data located
+  - In python, use [requests](https://docs.python-requests.org/en/latest/) module to work with API
+
+```python
+import requests
+response = requests.get(url="http://api.open-notify.org/iss-now.json")   
+response.raise_for_status()
+
+## print response code
+print(response)
+
+# getting the data from the api endpoint
+data =response.json()
+print(data)
+
+```
+
+<br>
+
+- [HTTP Response Codes Glossary](https://www.webfx.com/web-development/glossary/http-status-codes/) : eg. 404 website not found
+    - 1XX : Hold on
+    - 2XX: Sucess, here you go
+    - 3XX: Go away
+    - 4XX: You screwed up
+    - 5XX: I (server) screwed up
+ 
+ <br>
+ 
+ > JSON data is like a dictionary. Use this [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
+ > Sometimes data will return html entities, to decode them first `import html` then `html.unescape('xxx'))`
+ > A collective [list of APIs](https://apilist.fun/) to have fun
+
+
+<br>
+
+
 ### Front-end Web Development - HTML & CSS
 
 <br>
 
 > - [Day 41 - 44 Project - Web Development with HTML/CSS](Day%2041%20to%2044%20Project%20-%20HTML%20%26%20CSS%20Web%20Devlopment)
+> All notes of Web Development are available at []()
 
 <br>
 
@@ -1037,7 +1112,10 @@ if __name__ == '__main__':
 - [PyCharm Keyboard Shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html)
 - [Pypi: Repository of Python Packages](https://pypi.org/)
 - [clogram.py:](https://pypi.org/project/colorgram.py/#description) a python module to extract colors from image
+- [pythonanywhere to host your python script on cloud and run it on sheduled time](https://www.pythonanywhere.com/)
+- [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
 - [color palettes use color hunt](https://colorhunt.co/) : My favorite [color palette](https://colorhunt.co/palette/14832)
+- A collective [list of APIs](https://apilist.fun/) to have fun
 - [Find GIF on giphy.com](https://giphy.com)
 - [HD wallpaper on Uplash.com](https://unsplash.com)
 - [Free html templates (not for commercial use)](https://html5up.net)
