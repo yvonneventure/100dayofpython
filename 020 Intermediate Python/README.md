@@ -317,25 +317,192 @@ print(piano_tuple[1:5:2])
 
 
 
-### Local Files, Directories, Paths
+### Local Files, CSV Files ans Pandas Library
 
 <br>
 
 > - [Day 24 Project - Mail Merger](Day%2024%20Project%20-%20Mail%20Merger)
-
-<br>
-
-### CSV Files ans Pandas Library
-
-<br>
-
-> - [Day 25 Project - United States Guessing Game](Day%2025%20Project%20-%20United%20States%20%20Guessing%20Game)
-> - [Day 26 Project - NATO Alphabet](Day%2026%20Project%20-%20NATO%20Alphabet)
+> - [Day 25 Project - United States Guessing Game](Day%2025%20Project%20-%20United%20States%20%20Guessing%20Game): GUI & CSV
+> - [Day 26 Project - NATO Alphabet](Day%2026%20Project%20-%20NATO%20Alphabet) : CSV
 
 
 <br>
 
-### Graphic User Interface (GUI) - TKinter
+#### Local files, directory, file path
+
+- Absolute File Path vs. Relative File Path
+   - For mac, absolute file path starts with Macintosh, starts with "/": `/Users/xxx/PycharmProjects/`; 
+   - For windows, it's C drive 
+   - Relative file path starts with your working directory/folder, starts with "./" : `./Day 24/`
+   - if we want to get to the parent folder `../Applications/`
+   - `../../xxx`  : going up two levels
+
+- Open files and create files
+
+```python
+# ----There are 2 ways of opening file -------#
+
+# 1st way:
+"""is to open the file from backend , and
+the file will take up space in your computer, and you should always remember
+to close it """
+
+file = open("my_file.txt")
+contents = file.read()   #content will be a string
+print(contents)
+file.close()
+
+# 2nd way is easier, as you don't need to close the file
+##  - mode default is "r" as read mode, won't be able to make changes
+##  - mode="w"  --> write mode, will delete everythin existed and write
+##  - mode="a"  --> append mode, will append the text onto the existing text
+with open("my_file.txt",mode="a") as f:
+    contents = f.read()
+    print(contents)
+    f.write("\nsomething")
+
+
+#* when in "w"(write) mode, if the file you want to open doesn't exist, it will create it for you; "a" append mode will also create the file 
+
+with open("newfile.txt",mode="w") as m:
+    m.write("a")
+    
+file.readlines()  ##--> return a list and each line will be an element in the list
+string.lstrip()  ##--->like trim(), also get rid off the new line \ n
+string.replace()
+
+```
+<br>
+
+#### CSV file and [Pandas Library](https://pandas.pydata.org/docs/reference/index.html)
+
+- DataFrame vs. Series
+  - Two dimension data(Table) is called "DataFrame"
+  - One dimension data (Column) is called "series"
+
+```python
+
+import pandas
+data = pandas.read_csv("weather_data.csv")
+print(data)
+print(type(data))
+
+# table here is a two-dimension, called "data frame"
+print(data["temp"])   #get the column by using column name
+print(type(data["temp"]))
+
+# one column is one-dimensional, called "series"
+mean= data["temp"].max()
+print(mean)
+
+# Get data in columns
+print(data["temp"])
+print(data.temp)    #like an attribute in an object
+
+# Get data in row
+
+print(data[data.temp==data.temp.max()])   #gettting row by filter with a condition
+
+
+# Create dataframe from scratch
+
+data_dic={
+    "students" : ["Amy","Bob","Cathy"],
+    "score": [76,56,65]
+}
+#create dataframe from dictionary, where the key become colum name, and each list becomes a series --> so basically, passing each series
+score=pandas.DataFrame(data_dic)
+print(score)
+```
+
+<br>
+
+#### List Comprehension & Dictionary Comprehension
+
+<br>
+
+- List Comprehension
+  - Simpler way to create list then a complete for loop
+  - Works for list, string, dictionary, range, tuples, etc 
+
+
+```python
+## work with list
+list = [1,2,3]
+new = [n+1 for n in list]
+
+##work with string to create a list
+name = "angela"
+new = [letter for letter in name]
+
+##work with range to create a list
+r=range(1,5)
+new = [n*2 for n in r if n==2]
+
+#=> this equals to below full for loops
+r=range(1,5)
+new = []
+for n in r:
+  if n==2:
+    n*=2
+    new.append(n)
+    
+```
+
+<br>
+
+- Dictionary Comprehension
+
+```python
+##create dicitonary from list (list, string, tuple,dictionary....)
+sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+list=sentence.split()
+result={ word: len(word) for word in list }
+print(result)
+
+
+
+##create dictionary from dictionary
+weather_c = {
+    "Monday": 12,
+    "Tuesday": 14,
+    "Wednesday": 15,
+    "Thursday": 14,
+    "Friday": 21,
+    "Saturday": 22,
+    "Sunday": 24,
+}
+
+weather_f={
+  weekday: (temp_c * 9/5) + 32 for (weekday,temp_c) in weather_c.items()
+}
+print(weather_f)
+
+```
+
+<br>
+
+- List comprehension in Pandas DataFrame
+
+```python
+###loop through dataframe through pandas iterrow() function
+#Loop through rows of a data frame
+for (index, row) in student_data_frame.iterrows():
+#   #Access index and row
+#   #Access row.student or row.score
+#    pass
+
+# Keyword Method with iterrows()
+ {new_key:new_value for (index, row) in dataframe.iterrows()}
+
+```
+
+<br>       
+
+
+
+
+### Graphic User Interface (GUI) - [TKinter](https://docs.python.org/3/library/tkinter.html#the-packer)
 
 <br>
 
@@ -343,6 +510,187 @@ print(piano_tuple[1:5:2])
 > - [Day 28 Project - Pomodora Timer](Day%2028%20Project%20-%20Pomodora%20Timer)
 > - [Day 29 & 30 Project - My Password Manager](Day%2029%2630%20Project%20-%20My%20Password%20Manager)
 > - [Day 31 Project - Flash Cards](Day%2031%20Project%20-%20Flash%20Cards)
+
+<br>
+
+#### `*args` and `**kwags`
+
+- `*args` is a tuple data type, for createing unlimitated ***positional*** arguments in function, position matters
+- `**kwargs` is a dictionary data type, to create unlimited ***keyword*** arguments
+
+```python
+##create a function with unlimited positional arguments
+#  args is a tuple data type, position matters
+def add(*args):
+    sum=0
+    for n in args:
+        sum+=n
+    return sum
+
+print(add(1,2,3,4,5))
+
+##create a function with unlimited keyword arguments
+def calculate(n, **kwargs):   #kwargs is a dictionary data type
+    print(type(kwargs))
+    for key,value in kwargs.items():  #go through the dictionary and find what you need
+        print(key)
+        print(value)
+    n += kwargs["add"]
+    print(n)
+    n *= kwargs["multiple"]
+    print(n)
+calculate(2,add=3,multiple=5)
+
+####use **kwargs in class
+class Car:
+    def __init__(self,**kwargs):
+        #self.model=kwargs["model"]  -->Compared with the below line, this will return an error if no input of "model" comes in, which doesn't fit the feature of kwags as optional arguments, so should be use the below line 
+        #Below way is better to get the value of the key, if there's no this key exits, it will return "None", rather than an error        
+        self.model = kwargs.get("model")  
+        self.car = kwargs.get("car")
+
+mycar=Car(model="nissan",car="GTR")
+print(mycar.model)
+```
+
+<br>
+
+#### GUI - Tkinter
+
+- [TK Commands](http://tcl.tk/man/tcl8.6/TkCmd/contents.htm)
+- [Tk Canvas documentation](https://tkdocs.com/tutorial/canvas.html)
+
+```python
+## Use Tkinter
+from tkinter import *  #import all classes in tkinster
+
+window=Tk()
+window.title("Unit Converter")
+window.minsize(500,300)
+
+# create label
+label = Label(text="I am a lable",font=("Arial",24,"normal"))
+label.pack()  # use this to show the label
+
+#create button
+def buttonclick():
+    label["text"]=entry.get()
+    label.pack()
+button=Button(text="click me",command=buttonclick)
+button.pack()
+
+
+#create entry
+
+entry = Entry(width=30)
+#Add some text to begin with
+entry.insert(END, string="Some text to begin with.")
+#Gets text in entry
+print(entry.get())
+entry.pack()
+
+#Text
+text = Text(height=5, width=30)
+#Puts cursor in textbox.
+text.focus()
+#Adds some text to begin with.
+text.insert(END, "Example of multi-line text entry.")
+#Get's current value in textbox at line 1, character 0
+print(text.get("1.0", END))
+text.pack()
+
+#Spinbox
+def spinbox_used():
+    #gets the current value in spinbox.
+    print(spinbox.get())
+spinbox = Spinbox(from_=0, to=10, width=5, command=spinbox_used)
+spinbox.pack()
+
+#Scale
+#Called with current scale value.
+def scale_used(value):
+    print(value)
+scale = Scale(from_=0, to=100, command=scale_used)
+scale.pack()
+
+#Checkbutton
+def checkbutton_used():
+    #Prints 1 if On button checked, otherwise 0.
+    print(checked_state.get())
+#variable to hold on to checked state, 0 is off, 1 is on.
+checked_state = IntVar()
+checkbutton = Checkbutton(text="Is On?", variable=checked_state, command=checkbutton_used)
+checked_state.get()
+checkbutton.pack()
+
+#Radiobutton
+def radio_used():
+    print(radio_state.get())
+#Variable to hold on to which radio button value is checked.
+radio_state = IntVar()
+radiobutton1 = Radiobutton(text="Option1", value=1, variable=radio_state, command=radio_used)
+radiobutton2 = Radiobutton(text="Option2", value=2, variable=radio_state, command=radio_used)
+radiobutton1.pack()
+radiobutton2.pack()
+
+
+#Listbox
+def listbox_used(event):
+    # Gets current selection from listbox
+    print(listbox.get(listbox.curselection()))
+
+listbox = Listbox(height=4)
+fruits = ["Apple", "Pear", "Orange", "Banana"]
+for item in fruits:
+    listbox.insert(fruits.index(item), item)
+listbox.bind("<<ListboxSelect>>", listbox_used)
+listbox.pack()
+window.mainloop()
+
+
+#to show the widget we use either .pack() or .place(x= ,y= ) or .grid(colomn= ,row= )
+##pack and grid cannot be used together
+##pack is simply put things together from the top
+##place is for specific x and y coordinates, can be very tideous (0,0) is top left
+###grid is like a relative position, if top left is (column=0,row=0) then you can move the rest
+```
+
+<br>
+
+
+#### Exception Handling
+
+- `try:` block is to try something that may go wrong and try to catch that exception
+- `except:` block is to do somethin if exception happens, if not followed by specific error, it will catch all exceptions
+- `else:` block is to do something if no exceptions in try block, which means the process can only execute except block or the else block, else and except cannot excute in the same run
+- `finally:` block is to do something whether there's exception or not, so it will execute no matter what
+- `raise:` will break the process and raise the exception
+
+```python
+### For example. FileNotFound error
+
+try:  
+  		file=open("a_file.txt")  #FileNotFound error
+  		a_dic={"key":"value"}
+  		print(a_dic["a"])   #KeyError, as there's no such key exists
+except FileNotFoundError:
+  		file=open("a_file.txt","w")
+    	file.write("something")
+except KeyError as error_message:   #catch the error message
+  		print(f"The key {error_message} doesn't exist")
+else:  #only execute when try block has no exceptions/errors
+   	  content=file.read()
+    	print(content)
+finally:  #will execute no matter what
+    	file.close()
+    	print("file was closed.")
+      
+#raise exceptions, can be used with if 
+raise KeyError  #this will break the program and show this error
+raise TypeError("I made up this")    # break the program with this error message
+  
+```
+
 
 <br>
 
@@ -689,6 +1037,7 @@ if __name__ == '__main__':
 - [PyCharm Keyboard Shortcuts](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html)
 - [Pypi: Repository of Python Packages](https://pypi.org/)
 - [clogram.py:](https://pypi.org/project/colorgram.py/#description) a python module to extract colors from image
+- [color palettes use color hunt](https://colorhunt.co/) : My favorite [color palette](https://colorhunt.co/palette/14832)
 - [Find GIF on giphy.com](https://giphy.com)
 - [HD wallpaper on Uplash.com](https://unsplash.com)
 - [Free html templates (not for commercial use)](https://html5up.net)
