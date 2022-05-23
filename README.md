@@ -101,11 +101,12 @@ Syllabus for **100 Days of Code** by *Angela Yu* at Udemy.
 
 <br>
 
-## Advanced Level (Day 58 - Day 80)
+## [Advanced Level (Day 58 - Day 80)](030%20Advanced%20Python)
 
 <br>
 
-- Web Development with Bootstrap
+- Web Development with [Bootstrap]()
+- WTForms
 - Build Your Own REST API with Python
 - Build Your Own Blog
 - Databases with SQLite
