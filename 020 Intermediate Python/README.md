@@ -1026,9 +1026,52 @@ soup.select(selector=".heading")
 
 <br>
 
+Before we can use selenium:
+
+1. Install Chrome
+2. Download [Chrome driver](https://chromedriver.chromium.org/downloads)
+   To get what version of your google chrome, head to "Help" and "about Chrome"
+4. Install & setup selenium
+
+```python
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
+s =Service('filepath/chromedriver')
+driver = webdriver.Chrome(service=s)
+
+### go to website use .get
+driver.get("http://orteil.dashnet.org/experiments/cookie/")
+
+### find elements
+
+big_cookie = driver.find_element(By.ID, "cookie")
+
+driver.find_element(By.XPATH, '//button[text()="Some text"]') ## use developer tools in chrome to find out the xpath
+
+items_prices = []
+store = driver.find_elements(By.CSS_SELECTOR, "#store div")
+for price in all_prices:
+    price_cost = price.text.split("-")
+    items_prices.append(price_cost)
+    
+## to click on the element
+click_on = driver.find_element(By.ID, to_select)
+click_on.click()
+
+## to type/send keys
+
+elem = driver.find_element(By.NAME,"q")
+elem.send_keys("pycon")   ## type in "pycon"
+elem.send_keys(Keys.ENTER)  ## press enter key
 
 
 
+driver.close()  ## close the single browser tab
+driver.quit()  ## quit/shut down the entire browser
+```
+
+> Special keys in selenium Python can be found [here.](https://www.geeksforgeeks.org/special-keys-in-selenium-python/)
 
 
 
@@ -1062,7 +1105,7 @@ soup.select(selector=".heading")
 > - Django is more for larger commercial projects
 
 
-[Framework vs. Library]()
+- Framework vs. Library
 
 The biggest difference is that we have to obey the rules of framework, so that framework can call our methods (rather than we call methods from library).
 
