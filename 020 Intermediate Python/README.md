@@ -787,11 +787,9 @@ def check(age:int) -> bool :
 
 <br>
 
-#### API 
 
-<br>
 
-##### What's API?
+#### What's API?
 
 <br>
 
@@ -855,11 +853,17 @@ response = requests.get("https://api.sunrise-sunset.org/json", params=parameters
 
 <br>
 
-- API Authentication, Keys, Headers
+#### API Authentication, Keys, Headers
+
+**API Key** is like your personal account and password, it allows the API provider to track how much you're using their API to grant you access or deny your access once you've gone over the limit.
+
+<br>
+
+**API Headers** 
 
 
 
-- Post requests, Put requests, Delete requests
+#### HTTP Post requests, Put requests, Delete requests
 
 
 <br>
@@ -868,12 +872,25 @@ response = requests.get("https://api.sunrise-sunset.org/json", params=parameters
 
 <br>
 
+To see all your environment variables, type `env` in the terminal.
+
+Environment variables can be easily updated without tapping into the codes. Also for security reason, you don't want your authentication keys visiable to others.
+
+To create a ENV, type `export ENV_NAME="value"` then press enter, now you can see the environement variable you created in the list.
+
+To access the ENV in our python code:
+
+```python
+import os
+api_key=os.environ.get("ENV_NAME")
+```
 
 ### Front-end Web Development - HTML & CSS
 
 <br>
 
 > - [Day 41 - 44 Project - Web Development with HTML/CSS](Day%2041%20to%2044%20Project%20-%20HTML%20%26%20CSS%20Web%20Devlopment)
+> 
 > All notes of Web Development are available at [my web-design repository.](https://github.com/yvonneventure/web-design)
 
 <br>
@@ -1193,6 +1210,7 @@ if __name__ == '__main__':
 - [clogram.py:](https://pypi.org/project/colorgram.py/#description) a python module to extract colors from image
 - [pythonanywhere to host your python script on cloud and run it on sheduled time](https://www.pythonanywhere.com/)
 - [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
+- [twilio: send SMS API](https://www.twilio.com/docs/sms/quickstart/python)
 - [color palettes use color hunt](https://colorhunt.co/) : My favorite [color palette](https://colorhunt.co/palette/14832)
 - A collective [list of APIs](https://apilist.fun/) to have fun
 - [Find GIF on giphy.com](https://giphy.com)
