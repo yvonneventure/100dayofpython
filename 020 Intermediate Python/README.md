@@ -878,6 +878,15 @@ headers={
 response=requests.post(url=endpoint,json=data,headers=headers)
 ```
 
+Some websites will ask your [http header](http://myhttpheader.com).
+
+```python
+header = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+    "Accept-Language": "en-US,en;q=0.9"
+}
+response = requests.get(url, headers=header)
+```
 
 
 
@@ -934,12 +943,13 @@ api_key=os.environ.get("ENV_NAME")
 <br>
 
 > - [Day 41 - 44 Project - Web Development with HTML/CSS](Day%2041%20to%2044%20Project%20-%20HTML%20%26%20CSS%20Web%20Devlopment)
-> 
-> All notes of Web Development are available at [my web-design repository.](https://github.com/yvonneventure/web-design)
+
+
+All notes of Web Development are available at [my web-design repository.](https://github.com/yvonneventure/web-design)
 
 <br>
 
-### Web Scraping - Beautiful Soup Library
+### Web Scraping - [Beautiful Soup Library](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 <br>
 
@@ -949,7 +959,61 @@ api_key=os.environ.get("ENV_NAME")
 
 <br>
 
-### Automation & Web Scraping - Selenium Web Driver Library
+
+
+```python
+from bs4 import BeautifulSoup
+import lxml        ## if want to use lxml instead of html, add this line
+import requests
+
+## get the html text
+response = requests.get("https://web.archive.org/web/20200518073855/https://www.empireonline.com/movies/features/best-movies-2/")
+movies = response.text
+
+## make the soup
+soup = BeautifulSoup(movies, "html.parser")   ##change to "lxml"
+print(soup)  ## print out entire html contents
+
+## find first element with id="link3"
+soup.find(id="link3")
+
+## find first <title> tag
+soup.title
+# <title>The Dormouse's story</title>
+
+## title tag's name is title
+soup.title.name
+
+
+## the text within title tags is 'The Dormouse's story'
+soup.title.string
+
+
+## find h3 elements with class name "title", find_all return a list
+
+movie = soup.find_all(name="h3", class_="title")
+movie_list=[]
+for x in movie:   //extract text from each element
+    title=x.getText()
+    movie_list.insert(0,title)
+
+## to find use CSS selectors
+soup.select_one(selector="p a")  ## looking for an anchor tag within p element
+soup.select_one(selector="#name") ## looking for  elements with class name is name
+soup.select_one(selector=".name") ## looking for elements with id name is name
+
+## this is going to return a list with id as heading
+soup.select(selector=".heading")
+
+```
+ 
+> ❗️HINT: If you get an error that says "bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html-parser." Then it means you're not using the right parser, you'll need to import lxml at the top and install the module then use "lxml" instead of "html.parser" when you make soup. 
+
+
+
+<br>
+
+### Automation & Web Scraping - [Selenium Web Driver Library](https://selenium-python.readthedocs.io)
 
 <br>
 
@@ -959,6 +1023,14 @@ api_key=os.environ.get("ENV_NAME")
 > - [Day 51 Project - Internet Speed Complaint Bot](Day%2051%20Project%20-%20Internet%20Speed%20Twitter%20Complaint%20Bot)
 > - [Day 52 Project - Instagram Follower Bot](Day%2052%20Project%20-%20Instagram%20Follower%20Bot)
 > - [Day 53 Project - Data Entry Job Automation](Day%2053%20Project%20-%20Data%20Entry%20Job%20Automation)
+
+<br>
+
+
+
+
+
+
 
 <br>
 
@@ -1255,6 +1327,7 @@ if __name__ == '__main__':
 - [pythonanywhere to host your python script on cloud and run it on sheduled time](https://www.pythonanywhere.com/)
 - [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
 - [twilio: send SMS API](https://www.twilio.com/docs/sms/quickstart/python)
+- [Get http header](http://myhttpheader.com)
 - [color palettes use color hunt](https://colorhunt.co/) : My favorite [color palette](https://colorhunt.co/palette/14832)
 - A collective [list of APIs](https://apilist.fun/) to have fun
 - [Find GIF on giphy.com](https://giphy.com)
