@@ -778,8 +778,8 @@ def check(age:int) -> bool :
 
 <br>
 
-> - [Day 33 Project - ISS Overhead Notifier](Day%2033%20Project-%20ISS%20Overhead%20Notifier)
-> - [Day 34 Project - Quiz App](Day%2034%20Project%20-%20Quiz%20App)
+> - [Day 33 Project - ISS Overhead Notifier](Day%2033%20Project-%20ISS%20Overhead%20Notifier) :Basic API
+> - [Day 34 Project - Quiz App](Day%2034%20Project%20-%20Quiz%20App): API & TKinter
 > - [Day 35 & 36 Project - Stock Trading News SMS](Day%2035%2636%20Project%20-%20Stock%20Trading%20SMS)
 > - [Day 37 Project - Habit Tracker Use Pixela](Day%2037%20Project%20-%20Habit%20Tracker)
 > - [Day 38 Project - Workout Tracker Use Google Sheet](Day%2038%20Project%20-%20Workout%20Tracker%20Use%20Google%20Sheet)
@@ -874,7 +874,7 @@ response = requests.get("https://api.sunrise-sunset.org/json", params=parameters
 <br>
 
 > - [Day 41 - 44 Project - Web Development with HTML/CSS](Day%2041%20to%2044%20Project%20-%20HTML%20%26%20CSS%20Web%20Devlopment)
-> All notes of Web Development are available at []()
+> All notes of Web Development are available at [my web-design repository.](https://github.com/yvonneventure/web-design)
 
 <br>
 
@@ -893,11 +893,11 @@ response = requests.get("https://api.sunrise-sunset.org/json", params=parameters
 <br>
 
 > - [Day 48 Project - Cookie Game Playing Bot](Day%2048%20Project-%20Cookie%20Game%20Playing%20Bot%20Use%20Selenium)
-> - [Day 49 Project - Automate LinkedIn Job Application]()
-> - [Day 50 Project - Auto Tinder Swipe Bot]()
-> - [Day 51 Project - Internet Speed Complaint Bot]()
-> - [Day 52 Project - Instagram Follower Bot]()
-> - [Day 53 Project - Data Entry Job Automation]()
+> - [Day 49 Project - Automate LinkedIn Job Application](Day%2049%20Project-%20Automate%20LinkedIn)
+> - [Day 50 Project - Auto Tinder Swipe Bot](Day%2050%20Project%20-%20Automate%20Tinder%20Swiping%20Bot)
+> - [Day 51 Project - Internet Speed Complaint Bot](Day%2051%20Project%20-%20Internet%20Speed%20Twitter%20Complaint%20Bot)
+> - [Day 52 Project - Instagram Follower Bot](Day%2052%20Project%20-%20Instagram%20Follower%20Bot)
+> - [Day 53 Project - Data Entry Job Automation](Day%2053%20Project%20-%20Data%20Entry%20Job%20Automation)
 
 <br>
 
@@ -905,10 +905,10 @@ response = requests.get("https://api.sunrise-sunset.org/json", params=parameters
 
 <br>
 
-> - [Day 54 Project - ]()
-> - [Day 55 Project - ]()
-> - [Day 56 Project - ]()
-> - [Day 57 Project - ]()
+> - [Day 54 Project - Python Decorator](Day%2054%20Project%20-%20Python%20Decorator)
+> - [Day 55 Project - Higher Lower URLs](Day%2055%20Project%20-%20Higher%20Lower%20URLs)
+> - [Day 56 Project - My Personal Site](Day%2056%20Project%20-%20My%20Personal%20Site)
+> - [Day 57 Project - Blog Templating use Jinja](Day%2057%20Project%20-%20Blogs%20Templating)
 
 <br>
 
