@@ -362,7 +362,7 @@ with open("my_file.txt",mode="a") as f:
     f.write("\nsomething")
 
 
-#* when in "w"(write) mode, if the file you want to open doesn't exist, it will create it for you; "a" append mode will also create the file 
+# * when in "w"(write) mode, if the file you want to open doesn't exist, it will create it for you; "a" append mode will also create the file 
 
 with open("newfile.txt",mode="w") as m:
     m.write("a")
@@ -749,10 +749,12 @@ date_of_birth = dt.datetime(year=1993,month=10,day=31)
 > - [Day 39&40 Capstone Project - Flight Deal Finder](Day%2039%2640%20Project%20-%20Flight%20Deal%20Finder)
 
 <br>
+
 #### **API **
 
 <br>
-- What's **API**?
+
+##### What's **API**?
 
 <br>
 
