@@ -855,16 +855,52 @@ response = requests.get("https://api.sunrise-sunset.org/json", params=parameters
 
 #### API Authentication, Keys, Headers
 
-**API Key** is like your personal account and password, it allows the API provider to track how much you're using their API to grant you access or deny your access once you've gone over the limit.
+- **API Key** is like your personal account and password, it allows the API provider to track how much you're using their API to grant you access or deny your access once you've gone over the limit.
 
+```python
+# API key usually passed in as a parameter in parameters dictionary.
+user_params ={
+    "apid":"api_key",
+    "username":"name",
+    "agreeTermsOfService":"yes",
+    "notMinor": "yes"
+}
+response=requests.post(url=endpoint,json=user_params)
+```
 <br>
 
-**API Headers** 
+- **API Headers** is a more advanced authentication, and more secure than API Key.
+
+```python
+headers={
+    "X-USER-TOKEN": TOKEN
+}
+response=requests.post(url=endpoint,json=data,headers=headers)
+```
+
 
 
 
 #### HTTP Post requests, Put requests, Delete requests
 
+<br>
+
+```python
+
+ #####`requests.post()` to upload data
+
+response=requests.post(url=endpoint,json=data,headers=headers)
+
+
+##### `requests.put()` to update data
+
+response=requests.put(url=endpoint,json=data,headers=headers)
+
+
+##### `requests.delete()` to delete data
+
+response=requests.delete(url=delete_endpoint,headers=headers)
+```
 
 <br>
 
@@ -877,6 +913,14 @@ To see all your environment variables, type `env` in the terminal.
 Environment variables can be easily updated without tapping into the codes. Also for security reason, you don't want your authentication keys visiable to others.
 
 To create a ENV, type `export ENV_NAME="value"` then press enter, now you can see the environement variable you created in the list.
+
+Or use `os` module to set environment variables:
+
+```python
+import os
+APP_ID = os.environ["APP_ID"]
+API_KEY = os.environ["API_KEY"]
+```
 
 To access the ENV in our python code:
 
