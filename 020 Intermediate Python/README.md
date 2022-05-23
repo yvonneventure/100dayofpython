@@ -558,6 +558,7 @@ print(mycar.model)
 #### GUI - Tkinter
 
 - [TK Commands](http://tcl.tk/man/tcl8.6/TkCmd/contents.htm)
+- [TKinter Documentation](https://docs.python.org/3/library/tkinter.html)
 - [Tk Canvas documentation](https://tkdocs.com/tutorial/canvas.html)
 
 ```python
@@ -567,10 +568,18 @@ from tkinter import *  #import all classes in tkinster
 window=Tk()
 window.title("Unit Converter")
 window.minsize(500,300)
+window.after(1000,function) # after 1s, execute function
+
+## with window.mainloop() on, we cannot use time.sleep()
 
 # create label
 label = Label(text="I am a lable",font=("Arial",24,"normal"))
 label.pack()  # use this to show the label
+
+# Use Image
+
+img1=PhotoImage(file="file_path")
+some_button= Button(image=img1,highlightthickness=0)  // to create a button from image, and get rid of the hightlight border
 
 #create button
 def buttonclick():
@@ -578,6 +587,7 @@ def buttonclick():
     label.pack()
 button=Button(text="click me",command=buttonclick)
 button.pack()
+
 
 
 #create entry
@@ -645,7 +655,9 @@ for item in fruits:
     listbox.insert(fruits.index(item), item)
 listbox.bind("<<ListboxSelect>>", listbox_used)
 listbox.pack()
-window.mainloop()
+
+
+window.mainloop()  # like a while loop
 
 
 #to show the widget we use either .pack() or .place(x= ,y= ) or .grid(colomn= ,row= )
@@ -653,6 +665,19 @@ window.mainloop()
 ##pack is simply put things together from the top
 ##place is for specific x and y coordinates, can be very tideous (0,0) is top left
 ###grid is like a relative position, if top left is (column=0,row=0) then you can move the rest
+
+## Create Canvas
+
+canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
+tomato_img = PhotoImage(file="tomato.png")
+canvas.create_image(100, 112, image=tomato_img)
+timer_text = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
+canvas.grid(column=1, row=1)
+
+## To configure the window or the canvas, use .config
+window.config(padx=0,pady=0,bg="color")
+canvas.itemconfig(timer_text, text="00:00")
+
 ```
 
 <br>
@@ -734,6 +759,18 @@ print(now)
 date_of_birth = dt.datetime(year=1993,month=10,day=31)
 ```
 
+- Python type Hints & ->
+
+```python
+# the function check is expecting an integer input/parameters, and will output a boolean value
+
+def check(age:int) -> bool :
+  do something
+  return yes
+  
+## this will make sure when you use the function, it will pop up type hints
+```
+
 <br>
 
 ### Application Programming Interface (API) - Requests Library
@@ -750,11 +787,11 @@ date_of_birth = dt.datetime(year=1993,month=10,day=31)
 
 <br>
 
-#### **API **
+#### API 
 
 <br>
 
-##### What's **API**?
+##### What's API?
 
 <br>
 
@@ -781,6 +818,27 @@ print(data)
 
 <br>
 
+- API Parameters
+
+Just like parameters in function, passing in different parameters allow to get different pieces of data.
+
+Not all APIs have parameters, and some parameters are required, some are optional. Optional ones all have default value.
+
+Parameters can be passed as a dictionary, with keys and values.
+
+```python
+parameters = {
+        "lat": MY_LAT,
+        "lng": MY_LONG,
+        "formatted": 0,
+    }
+response = requests.get("https://api.sunrise-sunset.org/json", params=parameters)
+```
+
+> URL before `?` is usually the API endpoint, after that, you can put in your parameters. If you see several URLs, you will find the pattern.
+
+<br>
+
 - [HTTP Response Codes Glossary](https://www.webfx.com/web-development/glossary/http-status-codes/) : eg. 404 website not found
     - 1XX : Hold on
     - 2XX: Sucess, here you go
@@ -791,7 +849,7 @@ print(data)
  <br>
  
  > - JSON data is like a dictionary. Use this [json online viewer](http://jsonviewer.stack.hu/) to better see the structure of data
- > - Sometimes data will return html entities, to decode them first `import html` then `html.unescape('xxx')`
+ > - Sometimes data will return [html entities](https://www.w3schools.com/html/html_entities.asp), to decode them first `import html` then `html.unescape('xxx')`
  > - A collective [list of APIs](https://apilist.fun/) to have fun
 
 
@@ -909,6 +967,7 @@ The biggest difference is that we have to obey the rules of framework, so that f
  [Command Line Cheatsheet (Mac)](https://github.com/appbrewery/terminal-mac-cheatsheet#english-version) or search "Terminal Cheatsheet" on Google
 
 <br>
+
 
 #### Python Decorator
 
