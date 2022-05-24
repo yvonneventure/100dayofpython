@@ -2,7 +2,7 @@
 
 <br>
 
-### Bootstrap 5.1.3
+## Bootstrap 5.1.3
 
 > All notes can be found [here]().
 >
@@ -12,7 +12,14 @@
 
 <br>
 
-### Flask, WFT-Form, Jinja and Bootstrap 
+## Flask, WFT-Form, Jinja and Bootstrap 
+
+
+> - [Day 58-60 Project - Upgraded Blog Website](Day%2058-60%20Project%20-%20Upgraded%20Blog%20w%20Bootstrap): Flask & Bootstrap
+> - [Day 61 Project - FlaskWTforms: Advanced Contact Form](Day%2061%20Project%20-%20FlaskWTForms) 
+> - [Day 62 Project - Coffee & Wifi](Day%2062%20Project%20-%20Coffee%20and%20Wifi)
+
+<br>
 
 > [Flask 2.1 documentation](https://flask.palletsprojects.com/en/2.1.x/quickstart/)
 >
@@ -350,7 +357,10 @@ if __name__ == '__main__':
 
 <br>
 
-### SQLite & SQLAlchemy
+## SQLite & SQLAlchemy
+
+> - [Day 63 Project - Virtual Bookshelf](Day%2063%20Project%20-%20Virtual%20Bookshelf-%20SQLite%20%26%20SQLAlchemy)
+> - [Day 64 Project - TOP 10 Movies](Day%2064%20Project%20-%20TOP%2010%20movies)
 
 #### - SQLite
 
@@ -450,6 +460,17 @@ db.session.commit()
 ```
 
 - Working with any new database technology is how to **CRUD** data records : **Create, Read, Update, Delete**.
+
+
+## Web Design
+
+> Notes and project will be [here](https://github.com/yvonneventure/web-design/blob/main/Principles%20for%20web%20design.md)
+
+- Color Theory
+- Typography
+- UI design
+- UX design
+
 
 
 
