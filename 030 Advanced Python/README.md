@@ -350,7 +350,7 @@ if __name__ == '__main__':
 
 <br>
 
-### SQLite & SQL Alchemy
+### SQLite & SQLAlchemy
 
 
 
