@@ -225,7 +225,7 @@ When we are inheriting templates. Sometimes, there's some part of the template t
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <style>
-{% block block_name %}   ## now all pages use this base.html template will have a background color of purple
+{% block block_name %}  <!--now all pages use this base.html template will have a background color of purple-->
 body{
     background: purple;
 }
@@ -246,9 +246,9 @@ Now you can see how easy it is to modify all web pages in your website if you us
 {% extends "base.html" %}
 {% block title %}Success{% endblock %}
 {% block block_name %}
-	{{ super() }}   ## inherited super 
+	{{ super() }}   <!-- inherited super -->
 	h1 {
-		color:red;    ## overwrite the 
+		color:red;    <!-- update/overwrite h1 tag-->
 	}
 {% endblock %}
 {% block content %}
@@ -278,7 +278,7 @@ To add a quick form, first import at the top, then add one-line ` {{ wtf.quick_f
 ```hmtl
 {% import "bootstrap/wtf.html" as wtf %}
 
- {{ wtf.quick_form(form) }}
+{{ wtf.quick_form(form) }}
 
 ```
 
