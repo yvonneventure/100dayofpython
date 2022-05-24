@@ -1100,7 +1100,7 @@ driver.quit()  ## quit/shut down the entire browser
   - Front-end: React, Angular, etc
   - Back-end: Node, Flask, etc
 
-> [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/) vs. Django
+> [Flask](https://flask.palletsprojects.com/en/2.1.x/quickstart/) vs. Django
 > - Flask is more for beginners and small projects
 > - Django is more for larger commercial projects
 
@@ -1268,9 +1268,29 @@ if __name__ == '__main__':
 
 #### Advanced Python Decorator with variables and arguments
 
-- [Flask Rules of variables](https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules)
+- [Flask Rules of variables](https://flask.palletsprojects.com/en/2.1.x/quickstart/?#variable-rules)
+
+```python
+@app.route('/user/<username>')
+def show_user_profile(username):
+    # show the user profile for that user
+    return f'User {username}'
+
+@app.route('/post/<int:post_id>')
+def show_post(post_id):
+    # show the post with the given id, the id is an integer
+    return f'Post {post_id}'
+
+@app.route('/path/<path:subpath>')
+def show_subpath(subpath):
+    # show the subpath after /path/
+    return f'Subpath {subpath}'
+```
+
 
 <br>
+
+- Python decorator function
 
 ```python
 ## Advanced Python Decorator Functions
@@ -1299,25 +1319,81 @@ create_blog_post(new_user)
 
 
 
-- [Render HTML files under Flask Framework](https://flask.palletsprojects.com/en/1.1.x/quickstart/#rendering-templates)
+- [Render HTML files under Flask Framework](https://flask.palletsprojects.com/en/2.1.x/quickstart/?#rendering-templates)
+
   - Put html files under 'templates' folder
 
 ```python
-
+## render basic html file
 from flask import Flask, render_template
-
-from flask import Flask
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello_world():
     return render_template('index.html')
-
 if __name__ == '__main__':
     app.run(debug=True)
+```
 
+  - Use [Jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/) to produce dynamic html pages
 
+In html file, if code is in double curly brackets, it will be measured as python codes.
+
+```html
+<h1> 5*6 </h1>      <!-- this will show "5*6" -->
+
+<h1> {{5*6}} </h1>    <!-- this will show 30 -->
+
+```
+
+A simple jinja template in python will be:
+
+```python
+@app.route('/')
+def hello_world():
+    random_num=random.randint(0,10)
+    today=datetime.date.today().year
+    return render_template('index.html',num=random_num,curr_year=today)
+
+@app.route('/blog/<num>')
+def get_blog(num):     ## get num from indext.html and pu
+    posts= requests.get("https://api.npoint.io/c790b4d5cab58020d391").json()
+    return render_template('blog.html',posts=posts)
+
+@app.route('/<name>')   ## whatever name put in the url will be rendered in html page
+def username(name):       
+    cname = name.capitalize()
+    gender = requests.get(f"https://api.genderize.io?name={name}").json()["gender"]
+    age = requests.get(f"https://api.agify.io?name={name}").json()["age"]
+    return render_template('guess.html',cname=cname,gender=gender,age=age )
+```
+
+In html, the variables are passed and rendered in html 
+
+```html
+<!-- guess.html-->
+h1>Hello {{cname}}</h1>
+    <h2>I think you are {{gender}}</h2>
+    <h3>And maybe {{age}} years old.</h3>
+
+<!-- index.html-->
+<h3>Random Number is : {{num}}</h3>
+
+<a href="{{url_for('get_blog',num=3)}}">Go to blog</a>    
+<!-- num=3 will be passed to python code, there can have more parameters to be passed to url for get_blog function in python code -->
+</body>
+<footer>
+    <p>copyright {{curr_year}}</p>
+ 
+  <!-- blog.html-->
+ <body>
+{% for post in posts: %}
+    {%if post["id"]==2: %}
+    <h1>{{post["title"]}}</h1>
+    <h2>{{post["subtitle"]}}</h2>
+    {%  endif %}
+{% endfor %}
+</body>
 ```
 
 <br>
@@ -1376,6 +1452,8 @@ if __name__ == '__main__':
 - [Find GIF on giphy.com](https://giphy.com)
 - [HD wallpaper on Uplash.com](https://unsplash.com)
 - [Free html templates (not for commercial use)](https://html5up.net)
+- [store own json data and create api use n:point](https://www.npoint.io)
+- [fake blog examples](https://www.npoint.io/docs/c790b4d5cab58020d391)
 
 
 
