@@ -109,7 +109,7 @@ Syllabus for **100 Days of Code** by *Angela Yu* at Udemy.
 - WTForms
 - Build Your Own REST API with Python
 - Build Your Own Blog
-- Databases with SQLite
+- Databases with SQLite and SQLAlchemy
 - Dataframe Inspection
 - Data Cleaning
 - Sorting Values in Dataframes
