@@ -472,6 +472,18 @@ db.session.commit()
 - UX design
 
 
+## Build REST API Use Flask
+
+### REST (**RE**presentational **S**tate **T**ransfer)
+
+1. Use HTTP Request Verbs (Get, Post, Put/Patch, Delete)
+
+> Similar to database CRUD (Create, Read, Update, Delete)
+
+2. Use specific Pattern of Routes/Endpoint URLs
+
+<img width="591" alt="Screen Shot 2022-06-25 at 09 42 48" src="https://user-images.githubusercontent.com/103771536/175776190-5cb681b1-18c2-4a84-aac2-45b4d125e29d.png">
+
 
 
 
