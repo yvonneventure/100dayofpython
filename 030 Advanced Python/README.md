@@ -480,11 +480,16 @@ db.session.commit()
 
 > Similar to database CRUD (Create, Read, Update, Delete)
 
+#### Put vs Patch
+
+- Put : Replace the entire entry
+- Patch: Replace only pieces of data
+
 2. Use specific Pattern of Routes/Endpoint URLs
 
 <img width="591" alt="Screen Shot 2022-06-25 at 09 42 48" src="https://user-images.githubusercontent.com/103771536/175776190-5cb681b1-18c2-4a84-aac2-45b4d125e29d.png">
 
-
+> Use [Postman](https://www.postman.com/postman/workspace/) to test API Endpoints and generate API documentation
 
 
 
