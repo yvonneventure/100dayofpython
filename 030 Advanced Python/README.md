@@ -492,6 +492,69 @@ db.session.commit()
 > Use [Postman](https://www.postman.com/postman/workspace/) to test API Endpoints and generate API documentation
 
 
+## Day 67
+
+What if a user manipulated the webpage and wrote <script> evil script</script> inside the article?
+
+Bleach is a good Python tool for sanitizing html inputs before storing inside the DB or rendering inside the template.
+
+You should never declare raw user inputs as |safe without any measures taken server-side. See https://ckeditor.com/docs/ckeditor4/latest/guide/dev_best_practices.html#filter-content-server-side .
+
+```python
+import bleach
+ 
+## strips invalid tags/attributes
+def strip_invalid_html(content):
+    allowed_tags = ['a', 'abbr', 'acronym', 'address', 'b', 'br', 'div', 'dl', 'dt',
+                    'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'i', 'img',
+                    'li', 'ol', 'p', 'pre', 'q', 's', 'small', 'strike',
+                    'span', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th',
+                    'thead', 'tr', 'tt', 'u', 'ul']
+ 
+    allowed_attrs = {
+        'a': ['href', 'target', 'title'],
+        'img': ['src', 'alt', 'width', 'height'],
+    }
+ 
+    cleaned = bleach.clean(content,
+                           tags=allowed_tags,
+                           attributes=allowed_attrs,
+                           strip=True)
+ 
+    return cleaned
+ 
+## use strip_invalid_html-function before saving body
+body=strip_invalid_html(article.body.data)
+ 
+## you can test the code by using strong-tag
+```
+
+> HTML forms (WTForms included) do not accept PUT, PATCH or DELETE methods. We can update the database and re-render the items in database to have the same effect.
+
+
+
+
+## Authentication with Flask
+
+The most important component of a website is having users. Real humans who can contribute to the website. If Facebook had no users then it would just be adverts. If blogs had no users then it would just be the ramblings of an author.
+
+But in order to have users and associate data to user accounts, we need a way to register them and allow them to sign back into their accounts at a later date.
+
+Restrict Access with different user status (ie. different subscription).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
