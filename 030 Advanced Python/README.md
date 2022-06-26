@@ -543,8 +543,40 @@ But in order to have users and associate data to user accounts, we need a way to
 Restrict Access with different user status (ie. different subscription).
 
 
+### Encrytion & Hashing
+
+Levels of security:
+
+- Level 1 : Simply store plain text in server
+
+- Level 2 (Encryption) : Password + Key with cipher method, then we end up with some ciphertext
+
+> Limitation is that encrytion needs key, which is not that secure if the hacker is motivated enough.
+
+- Level 3 (Hashing) : Password with a hash function will produce a Hash and we will store the hash in the server. Hash function is a mathematical function that will take no time going forward, but almost impossible going backward. Meaning it may take 1 millisecond to hash it, but may take 2 years to decode it. Hashing also doesn't need a key.
+
+> [plaintextoffenders: ](https://plaintextoffenders.com)a list of companies will email your password back to you when you want to reset your password, which we learnt in hashing that it's impossible to get the plain text of your password. This means that their websites are not secure.
+
+- Level 4 (Salting): Adding random characters to user's password to generate the hash. We will only store the salt and the Hash in the database. MD5 is the most easiest hash to be hacked. Now the industry standard is bcrypt and also use Salt Rounds. 
+
+Salt Rounds: First we use password and a random set of salt to generate Hash, then we take this Hash and add the same salt agin and create another Hash, then do this again and again. This is called Salt Rounds. In this case, we only store the salt and end Hash in the database. Once user input the password, we will use the salt stored in database, and hash the same number of rounds and compare with the end hash stored in database, if it's a match then we have our user verified.
+
+> - [Cryptii](https://cryptii.com)
+> - [YouTube Video: Enigma Machine - Numberphile](https://www.youtube.com/watch?v=G2_Q9FoD-oQ)
+> - [YouTube Video: Flaw in the Enigma Code - Numberphile](https://www.youtube.com/watch?v=V4V2bpZlqx8)
+> - [Book: The Code Book by Simon Singh](https://www.torontopubliclibrary.ca/search.jsp?Ntt=The+code+book)
 
 
+### Hacking Passwords 101
+
+> - [Check if your password got hacked](https://haveibeenpwned.com)
+> - [List_of_the_most_common_passwords](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords)
+> - [Password Complexity Checker](http://password-checker.online-domain-tools.com)
+
+❗️The longer the password, the time hacking will increase exponentially (recomended 12+ characters.
+❗️Don't use words in dictionary.
+
+For fun, you can use https://hackertyper.net to mess up with your friends, you can type anything but it will produce something seems realistic.
 
 
 
