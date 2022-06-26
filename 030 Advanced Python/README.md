@@ -579,6 +579,7 @@ Salt Rounds: First we use password and a random set of salt to generate Hash, th
 For fun, you can use https://hackertyper.net to mess up with your friends, you can type anything but it will produce something seems realistic.
 
 
+[Use werkzeug to hash and salt user's password.](https://werkzeug.palletsprojects.com/en/1.0.x/utils/#module-werkzeug.security)
 
 
 
